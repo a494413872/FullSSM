@@ -60,9 +60,17 @@ public class HelloAction {
         return "helloworld";
     }
 
-    @RequestMapping("restTemplateHanlder")
+    @RequestMapping("/restTemplateHanlder")
     @ResponseBody
     public String restTemplateHanlder(){
         return "这是一个rest handler";
     }
+
+    @RequestMapping("/dubbocall")
+    @ResponseBody
+    public String dubbocall(){
+
+        return "dubbocall result=";
+    }
+
 }
