@@ -1,4 +1,4 @@
-package com.lvmama.util;
+package com.lvmama.log.util;
 
 import java.util.UUID;
 

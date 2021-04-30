@@ -14,4 +14,20 @@
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
 
+    <dependencies>
+        <!--为了引入IOUtils-->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+        </dependency>
+        <!--为了解决soa依赖问题-->
+        <dependency>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+            <version>2.4</version>
+            <classifier>jdk15</classifier>
+        </dependency>
+    </dependencies>
+
 </project>

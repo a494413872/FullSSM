@@ -8,5 +8,5 @@
 						http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
        default-autowire="byName">
 
-
+<dubbo:reference id="userServiceRemote" interface="com.demo.service.UserService"></dubbo:reference>
 </beans>

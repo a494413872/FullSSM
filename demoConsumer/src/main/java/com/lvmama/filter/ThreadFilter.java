@@ -2,7 +2,7 @@ package com.lvmama.filter;
 
 import com.lvmama.net.util.NetUtils;
 import com.lvmama.pub.DistributedContext;
-import com.lvmama.util.LogTrackContext;
+import com.lvmama.log.util.LogTrackContext;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

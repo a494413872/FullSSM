@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- 提供方应用信息，用于计算依赖关系 -->
+    <dubbo:application name="${dubbo.application.name}"/>
+
+    <!-- 使用zookeeper注册中心暴露服务地址 -->
+    <dubbo:registry protocol="${dubbo.registry.protocol}" address="${dubbo.registry.address}" check="false"/>
+
+    <!-- 用dubbo协议在20880端口暴露服务 -->
+    <dubbo:protocol name="dubbo" port="${dubbo.protocol.port}" threads="400"/>
+
+    <!-- 监控注册 -->
+    <!--<dubbo:monitor address="${dubbo.monitor.address}"/>-->
+
+    <dubbo:consumer check="false" lazy="true"/>
+
+    <!-- 默认超时时间2分钟，重试次数1次  请求及响应数据包大小限制，单位：字节 设置为20M-->
+    <dubbo:provider timeout="120000" retries="0" payload="20971520"/>
+
+    <!-- 请求及响应数据包大小限制，单位：字节 设置为20M -->
+    <!--<dubbo:provider payload="20971520"/>-->
+
+
+
+</beans>

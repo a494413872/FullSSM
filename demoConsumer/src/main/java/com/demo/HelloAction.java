@@ -2,6 +2,7 @@ package com.demo;
 
 import com.demo.extra.springListener.AppleEvent;
 import com.demo.extra.springListener.CustomerEvent;
+import com.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -25,6 +27,9 @@ public class HelloAction {
     //访问hello的时候发送一个事件。
     @Autowired
     ApplicationContext applicationContext;
+
+    @Resource
+    UserService userServiceRemote;
 
     @RequestMapping("/p-{id}/hello")
     public String helloWorld(Model model, HttpServletRequest req, HttpServletResponse Resp, @RequestParam("name") String name,@PathVariable("id") Long id){
@@ -70,7 +75,7 @@ public class HelloAction {
     @ResponseBody
     public String dubbocall(){
 
-        return "dubbocall result=";
+        return userServiceRemote.getUserName();
     }
 
 }
